@@ -57,6 +57,9 @@ impl EncryptCtx {
 
             if !flag {
                 for i in 0..t.len() {
+                    if i>=msg.len() {
+                        break;
+                    }
                     t[i] ^= msg[i];
                 }
                 let mut prepend: Vec<u8> = vec![];
